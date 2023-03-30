@@ -1,0 +1,34 @@
+:root {
+  --color_bg: #FBFBFB;
+  --color_text: #000000;
+
+  --transition: all 400ms ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color_text_white);
+  font-weight: 400;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--color_bg) !important;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
