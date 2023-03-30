@@ -117,4 +117,10 @@ export const HomePageCon = styled.div`
             }
         }
     }
+
+    @media (max-width: 576px) {
+        .calendar__header__left {
+            width: calc(100vw - 30px);
+        }
+    }
 `

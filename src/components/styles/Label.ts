@@ -138,4 +138,14 @@ export const LabelsCon = styled.div`
             }
         }
     }
+
+    @media (max-width: 576px) {
+        display: flex;
+        flex: 1;
+
+        .calendar__header__left__colorButton {
+            min-width: 0;
+            flex: 1;
+        }
+    }
 `
