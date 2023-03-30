@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const HomePageCon = styled.div`
-    width: 100%;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -11,9 +10,11 @@ export const HomePageCon = styled.div`
         width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
 
         .calendar__header__left {
             place-self: start;
+            align-self: center;
             display: flex;
             align-items: center;
 
@@ -29,6 +30,7 @@ export const HomePageCon = styled.div`
 
         .calendar__header__identifier {
             place-self: center;
+            align-self: center;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -46,23 +48,26 @@ export const HomePageCon = styled.div`
             }
 
             .calendar__header__identifier__title {
-
+                max-width: calc(100% - 100px);
+                text-align: center;
             }
         }
 
         .calendar__header__buttons {
             place-self: end;
+            align-self: center;
             display: flex;
             flex-direction: row;
             gap: 5px;
 
             & > div {
-                padding: 5px 10px;
+                padding: 3px 10px;
                 background: lightgray;
                 border-radius: 5px;
                 cursor: pointer;
                 transition: all .3s ease-in-out;
                 box-shadow: none;
+                white-space: nowrap;
 
                 &:hover {
                     box-shadow: 2px 2px 10px 3px rgba(0,0,0,0.1);
@@ -77,9 +82,11 @@ export const HomePageCon = styled.div`
     }
 
     .calendar__subheader {
+        max-width: calc(100vw - 30px);
         padding: 30px 0 10px;
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 5px;
 
         .calendar__subheader__day {
             place-self: center;
@@ -87,10 +94,27 @@ export const HomePageCon = styled.div`
     }
 
     .calendar__body {
+        max-width: calc(100vw - 30px);
         flex-grow: 1;
         display: grid;
         height: 100%;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(7, minmax(0, 1fr));
         gap: 5px;
+    }
+
+    @media (max-width: 992px) {
+        .calendar__header {
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-flow: dense;
+
+            .calendar__header__left,
+            .calendar__header__buttons {
+                place-self: center;
+            }
+
+            .calendar__header__buttons {
+                grid-row: 1;
+            }
+        }
     }
 `

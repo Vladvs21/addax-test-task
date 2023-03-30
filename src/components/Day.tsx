@@ -204,6 +204,7 @@ const Day:FC<DayPropsI> = ({metaData, tasks, setTasks, filteredTasks, filteredHo
                             setLabels={setLabels} 
                             selectedLabes={taskLabels} 
                             setSelectedLabes={setTaskLabels} 
+                            callback={handleChangeTaskLabel}
                         />
                         <div className="row">
                             <input type="text" value={taskText} onChange={e => setTaskText(e.target.value)} placeholder="Enter task text..." />

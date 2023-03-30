@@ -125,4 +125,43 @@ export const DayCon = styled.div`
         max-height: 100px;
         opacity: 1;
     }
+
+    @media (max-width: 992px) {
+        .calendar__body__day__title {
+            flex-direction: column;
+            margin-bottom: 5px;
+
+            .calendar__body__day__title__numOfCards {
+                overflow: scroll;
+                width: 100%;
+                white-space: nowrap;
+            }
+        }
+
+        .calendar__body__day__card {
+            overflow: scroll;
+
+            .row {
+                input {
+                    min-width: 120px;
+                }
+            }
+
+            .calendar__body__day__card__text {
+                white-space: nowrap;
+
+                .edit {
+                    opacity: 1;
+                }
+            }
+
+            .calendar__body__day__card__colors {
+                flex-direction: column;
+
+                .calendar__body__day__card__colors-single {
+                    width: 100%;
+                }
+            }
+        }
+    }
 `
